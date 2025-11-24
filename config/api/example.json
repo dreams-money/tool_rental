@@ -1,0 +1,23 @@
+{
+    "recipients": [
+        {
+            "name": "Cesar",
+            "email": "c17vega@gmail.com"
+        }
+    ],
+    "mail": {
+        "host": "",
+        "port": "",
+        "user": "",
+        "password": "",
+        "from": ""
+    },
+    "persistence": {
+        "host": "",
+        "port": "",
+        "user": "",
+        "password": "",
+        "database": "",
+        "sslmode": ""
+    }
+}
