@@ -44,16 +44,16 @@ export function ToolDetailPage() {
     );
   }
 
-  const handleSubmitReservation = (e: React.FormEvent) => {
+  const handleSubmitReservation = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!dateRange?.from || !dateRange?.to) {
-      toast.error('Please select rental dates');
+      alert('Please select rental dates');
       return;
     }
     
     if (!phoneNumber) {
-      toast.error('Please enter your phone number');
+      alert('Please enter your phone number');
       return;
     }
 
@@ -62,15 +62,53 @@ export function ToolDetailPage() {
       return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
     };
 
-    toast.success(
-      `Reservation request submitted! We'll contact you at ${phoneNumber} to confirm your rental of ${tool.name} from ${formatDate(dateRange.from)} to ${formatDate(dateRange.to)}.`
-    );
+    const formatPhoneNumber = (number: string): string => {
+      let pieces = number.split('')
 
-    // Submit to API
-    
-    // Reset form
-    setDateRange(undefined);
-    setPhoneNumber('');
+      if (number.length == 10 && /^[a-zA-Z0-9]*$/.test(number)) {
+        return `(${pieces.slice(0, 3).join('')}) ${pieces.slice(3, 6).join('')}-${pieces.slice(6).join('')}`
+      }
+
+      return number
+    };
+
+    let dateFromFormatted = formatDate(dateRange.from)
+    let dateToFormatted = formatDate(dateRange.to)
+    let phoneNumberFormatted = formatPhoneNumber(phoneNumber)
+
+    try {
+      let response = await fetch('http://localhost:8080/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'mKi5zHscDQcaZAXTStDlvr367qBwamZ7',
+        },
+        body: JSON.stringify({
+          tool_id: toolId,
+          phone_number: phoneNumberFormatted,
+          from: dateRange.from,
+          to: dateRange.to
+        })
+      })
+  
+      if (!response.ok) {
+        alert(
+          'There was an error with your request! - Please contact (775) 671-1945 to reserve your equipment.'
+        );
+      } else {
+        alert(
+          `Reservation request submitted! We'll contact you at ${phoneNumberFormatted} to confirm your rental of ${tool.name} from ${dateFromFormatted} to ${dateToFormatted}.`
+        );
+
+        // Reset form
+        setDateRange(undefined);
+        setPhoneNumber('');
+      }
+    } catch (error) {
+        alert(
+          'There was an error with your request! - Please contact (775) 671-1945 to reserve your equipment.'
+        );
+    }
   };
 
   return (
@@ -162,11 +200,11 @@ export function ToolDetailPage() {
                 </div>
                 {dateRange?.from && dateRange?.to && (
                   <div className="mt-3 p-3 bg-[#0076A8] rounded-lg">
-                    <p className="text-sm text-white opacity-90">
-                      Rental period: {dateRange.from.toLocaleDateString()} - {dateRange.to.toLocaleDateString()}
+                    <p className="text-sm text-white">
+                      <strong>Rental period:</strong> {dateRange.from.toLocaleDateString()} - {dateRange.to.toLocaleDateString()}
                     </p>
-                    <p className="text-sm text-white opacity-90 mt-1">
-                      Duration: {Math.ceil((dateRange.to.getTime() - dateRange.from.getTime()) / (1000 * 60 * 60 * 24))} days
+                    <p className="text-sm text-white mt-1">
+                      <strong>Duration:</strong> {Math.ceil((dateRange.to.getTime() - dateRange.from.getTime()) / (1000 * 60 * 60 * 24))} days
                     </p>
                   </div>
                 )}

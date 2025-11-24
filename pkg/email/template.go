@@ -50,7 +50,7 @@ func readyBodyFileToString(templateName string) (string, error) {
 }
 
 func readTemplateFileToString(templateName, fileName string) (string, error) {
-	file, err := os.Open("emails/templates/" + templateName + "/" + fileName)
+	file, err := os.Open("templates/emails/" + templateName + "/" + fileName)
 	if err != nil {
 		return "", err
 	}

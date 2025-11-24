@@ -152,6 +152,7 @@ func main() {
 	})
 
 	http.HandleFunc("/send", func(w http.ResponseWriter, r *http.Request) {
+		enableCORS(w)
 		if r.Method != http.MethodPost {
 			return
 		}
@@ -191,4 +192,10 @@ func main() {
 	if err != nil {
 		log.Fatalf("Error starting server: %s\n", err)
 	}
+}
+
+func enableCORS(resp http.ResponseWriter) {
+	resp.Header().Set("Access-Control-Allow-Origin", "*") // Set to domain eventually
+	resp.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS")
+	resp.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization")
 }
