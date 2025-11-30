@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import logo from 'figma:asset/556feb40f90376c18d2ca45286151ad0fb249a95.png';
+import logo from 'logo-plain.png';
 
 export function Navigation() {
   const location = useLocation();
@@ -13,7 +13,7 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex-shrink-0">
-            <img src={logo} alt="Carson City Rentals" className="h-16" />
+            <img src={logo} alt="Carson City Rentals" className="h-20" />
           </Link>
           <div className="flex gap-8">
             <Link
