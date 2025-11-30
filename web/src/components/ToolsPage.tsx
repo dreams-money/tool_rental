@@ -3,7 +3,28 @@ import { Link } from 'react-router-dom';
 import { tools } from '../data/tools';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
-const categories = ['All', 'Heavy Equipment', 'Demolition', 'Cleaning', 'Concrete', 'Compaction', 'Power', 'Access', 'Digging', 'Cutting'];
+const categories = [
+  'All', 
+  'Heavy Equipment', 
+  'Demolition', 
+  'Cleaning', 
+  'Concrete', 
+  'Compaction', 
+  'Power & Heating', 
+  'Access & Handling', 
+  'Digging', 
+  'Wood Cutting & Shaping', 
+  'Smoothing',
+  'Nailers & Staplers',
+  'General Construction',
+  'Masonry & Tile',
+  'Plumbing',
+  'Flooring',
+  'Painting & Vacuum',
+  'Landscaping',
+  'Drywall',
+  'Welding',
+];
 
 const toolImages: Record<string, string> = {
   'excavator-mini': 'https://images.unsplash.com/photo-1652922660696-60c68ec51582?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjBleGNhdmF0b3J8ZW58MXx8fHwxNzYzNjg2MjgwfDA&ixlib=rb-4.1.0&q=80&w=1080',
@@ -15,9 +36,32 @@ const toolImages: Record<string, string> = {
   'generator-7500': 'https://images.unsplash.com/photo-1509390144018-eeaf65052242?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwb3dlciUyMGdlbmVyYXRvcnxlbnwxfHx8fDE3NjM2ODYyODJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
   'scaffold-set': 'https://images.unsplash.com/photo-1635961365604-c001fd0ea2b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2FmZm9sZCUyMGNvbnN0cnVjdGlvbnxlbnwxfHx8fDE3NjM2ODYyODJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
   'post-hole-digger': 'https://images.unsplash.com/photo-1551868561-f2cdee310ecf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdWdlciUyMGRyaWxsfGVufDF8fHx8MTc2MzY4NjI4Mnww&ixlib=rb-4.1.0&q=80&w=1080',
-  'tile-saw': 'https://images.unsplash.com/photo-1574679322295-61db3505f217?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aWxlJTIwc2F3fGVufDF8fHx8MTc2MzY4NjI4M3ww&ixlib=rb-4.1.0&q=80&w=1080',
   'carpet-cleaner': 'https://images.unsplash.com/photo-1644743694668-920c3e5d05b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXJwZXQlMjBjbGVhbmVyfGVufDF8fHx8MTc2MzY4NjI4M3ww&ixlib=rb-4.1.0&q=80&w=1080',
   'chainsaw': 'https://images.unsplash.com/photo-1474742817425-9f91918183b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGFpbnNhd3xlbnwxfHx8fDE3NjM2ODYyODR8MA&ixlib=rb-4.1.0&q=80&w=1080',
+  'electric-hand-planner': 'https://static.carson-rentals.com/images/electric-hand-planer.jpg',
+  'jig-saw': 'https://static.carson-rentals.com/images/jig-saw.jpg',
+  'large-wood-router': 'https://static.carson-rentals.com/images/wood-router.jpg',
+  'oscillating-tool': 'https://static.carson-rentals.com/images/osilating-tool.jpg',
+  'table-saw': 'https://static.carson-rentals.com/images/table-saw.jpg',
+  'track-saw': 'https://static.carson-rentals.com/images/track-saw.jpg',
+  'dremel': 'https://static.carson-rentals.com/images/dremel.jpg',
+  'angle-grinder': 'https://static.carson-rentals.com/images/angle-grinder.jpg',
+  'finish-nailer': 'https://static.carson-rentals.com/images/brad-finish-nailer.jpg',
+  'straight-nailer': 'https://static.carson-rentals.com/images/straight-nailer.jpg',
+  'crown-stapler': 'https://static.carson-rentals.com/images/crown-stapler.jpg',
+  'pancake-compressor': 'https://static.carson-rentals.com/images/pancake-compressor.jpg',
+  'tile-saw': 'https://static.carson-rentals.com/images/tile-saw.jpg',
+  'drill-drain-cleaner': 'https://static.carson-rentals.com/images/drain-clearer.jpg',
+  'carpet-kicker': 'https://static.carson-rentals.com/images/carpet-kicker.jpg',
+  'carpet-stretcher': 'https://static.carson-rentals.com/images/carpet-strecher.jpg',
+  'carpet-seamer': 'https://static.carson-rentals.com/images/carpet-seamer.jpg',
+  'hand-truck': 'https://static.carson-rentals.com/images/hand-truck.jpg',
+  'vacuum': 'https://static.carson-rentals.com/images/vacuum.jpg',
+  'circular-saw': 'https://static.carson-rentals.com/images/circular-saw.jpg',
+  'miter-saw-12-in': 'https://static.carson-rentals.com/images/miter-saw.jpg',
+  'reciprocating-saw': 'https://static.carson-rentals.com/images/recepricating-saw.jpg',
+  'battery-drill': 'https://static.carson-rentals.com/images/drill.jpg',
+  'battery-impact-drill': 'https://static.carson-rentals.com/images/impact-drill.jpg',
 };
 
 export function ToolsPage() {
