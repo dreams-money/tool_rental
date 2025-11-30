@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"errors"
+	"flag"
 	"fmt"
 	"io"
 	"log"
@@ -81,6 +82,10 @@ func respondError(w http.ResponseWriter, err error) {
 }
 
 func main() {
+	dev := flag.Bool("dev", false, "Turn on development mode of this app")
+
+	flag.Parse()
+
 	config, err := config.LoadConfig("config.json")
 	if err != nil {
 		log.Panic(err)
@@ -152,7 +157,7 @@ func main() {
 	})
 
 	http.HandleFunc("/send", func(w http.ResponseWriter, r *http.Request) {
-		enableCORS(w)
+		enableCORS(w, dev)
 		if r.Method != http.MethodPost {
 			return
 		}
@@ -186,6 +191,10 @@ func main() {
 		respondSuccess(w)
 	})
 
+	if *dev {
+		log.Println("Starting app in development mode")
+	}
+
 	port := ":8080"
 	log.Printf("Server starting on port %s\n", port)
 	err = http.ListenAndServe(port, nil)
@@ -194,8 +203,12 @@ func main() {
 	}
 }
 
-func enableCORS(resp http.ResponseWriter) {
-	resp.Header().Set("Access-Control-Allow-Origin", "*") // Set to domain eventually
+func enableCORS(resp http.ResponseWriter, dev *bool) {
+	if *dev {
+		resp.Header().Set("Access-Control-Allow-Origin", "*")
+	} else {
+		resp.Header().Set("Access-Control-Allow-Origin", "https://carson-rentals.com")
+	}
 	resp.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS")
 	resp.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization")
 }
