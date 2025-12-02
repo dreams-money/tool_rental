@@ -27,8 +27,8 @@ const categories = [
 ];
 
 const toolImages: Record<string, string> = {
-  'excavator-mini': 'https://images.unsplash.com/photo-1652922660696-60c68ec51582?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjBleGNhdmF0b3J8ZW58MXx8fHwxNzYzNjg2MjgwfDA&ixlib=rb-4.1.0&q=80&w=1080',
-  'skid-steer': 'https://images.unsplash.com/photo-1630628535113-e1cc025c8c34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxza2lkJTIwc3RlZXIlMjBsb2FkZXJ8ZW58MXx8fHwxNzYzNjg2MjgxfDA&ixlib=rb-4.1.0&q=80&w=1080',
+  'excavator-mini': 'https://static.carson-rentals.com/images/mini-excavator.jpg',
+  'skid-steer': 'https://static.carson-rentals.com/images/skid-steer.jpg',
   'jackhammer': 'https://images.unsplash.com/photo-1582284168532-ef7b89baa1c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxqYWNraGFtbWVyJTIwZGVtb2xpdGlvbnxlbnwxfHx8fDE3NjM2ODYyODF8MA&ixlib=rb-4.1.0&q=80&w=1080',
   'pressure-washer': 'https://images.unsplash.com/photo-1592365559101-19adfefdf294?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmVzc3VyZSUyMHdhc2hlcnxlbnwxfHx8fDE3NjM2ODYyODF8MA&ixlib=rb-4.1.0&q=80&w=1080',
   'concrete-mixer': 'https://images.unsplash.com/photo-1690719744562-249937b9c03a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25jcmV0ZSUyMG1peGVyfGVufDF8fHx8MTc2MzYxODc0NXww&ixlib=rb-4.1.0&q=80&w=1080',

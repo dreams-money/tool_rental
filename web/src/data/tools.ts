@@ -28,8 +28,8 @@ export const tools: Tool[] = [
     name: 'Mini Excavator',
     category: 'Heavy Equipment',
     description: 'Compact excavator perfect for digging, trenching, and landscaping projects. Easy to maneuver in tight spaces.',
-    dailyRate: 299,
-    weeklyRate: 1200,
+    dailyRate: 350,
+    weeklyRate: 1975,
     image: 'construction excavator',
     specs: ['Operating Weight: 3,000 lbs', 'Max Dig Depth: 8 ft', 'Diesel Powered', 'Zero Tail Swing']
   },
@@ -38,8 +38,8 @@ export const tools: Tool[] = [
     name: 'Skid Steer Loader',
     category: 'Heavy Equipment',
     description: 'Versatile machine for moving materials, grading, and more. Compatible with various attachments.',
-    dailyRate: 275,
-    weeklyRate: 1100,
+    dailyRate: 350,
+    weeklyRate: 1975,
     image: 'skid steer loader',
     specs: ['Operating Capacity: 1,900 lbs', 'Horsepower: 74 HP', 'Hydraulic Flow: 26 gpm', 'Enclosed Cab']
   },
@@ -91,18 +91,18 @@ export const tools: Tool[] = [
     dailyRate: 19,
     weeklyRate: 76,
     image: 'hand planner',
-    specs: ['Electric']
+    specs: ['Corded', '6.5 Amp motor', 'Depth Knob', 'Spring loaded stand']
   },
-  {
-    id: 'orbit-sander',
-    name: 'Orbit Sander',
-    category: 'Smoothing',
-    description: 'Strip old paint, prepare or new paint, finsh between coats, or smooth out any surface.',
-    dailyRate: 13,
-    weeklyRate: 51,
-    image: 'orbit sander',
-    specs: ['Electric']
-  },
+  // {
+  //   id: 'orbit-sander',
+  //   name: 'Orbit Sander',
+  //   category: 'Smoothing',
+  //   description: 'Strip old paint, prepare or new paint, finsh between coats, or smooth out any surface.',
+  //   dailyRate: 13,
+  //   weeklyRate: 51,
+  //   image: 'orbit sander',
+  //   specs: ['Electric']
+  // },
   {
     id: 'circular-saw',
     name: '36V Circular Saw',
@@ -111,7 +111,7 @@ export const tools: Tool[] = [
     dailyRate: 27,
     weeklyRate: 105,
     image: 'wood',
-    specs: ['Electric']
+    specs: ['20v Battery', '6.5" Blade', '2.25" cut depth at 90 degrees']
   },
   {
     id: 'jig-saw',
