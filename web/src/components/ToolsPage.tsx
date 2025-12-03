@@ -43,6 +43,7 @@ const toolImages: Record<string, string> = {
   'large-wood-router': 'https://static.carson-rentals.com/images/wood-router.jpg',
   'oscillating-tool': 'https://static.carson-rentals.com/images/osilating-tool.jpg',
   'table-saw': 'https://static.carson-rentals.com/images/table-saw.jpg',
+  'cabinet-clamps': 'https://static.carson-rentals.com/images/cabinet-clamps.jpg',
   'track-saw': 'https://static.carson-rentals.com/images/track-saw.jpg',
   'dremel': 'https://static.carson-rentals.com/images/dremel.jpg',
   'angle-grinder': 'https://static.carson-rentals.com/images/angle-grinder.jpg',

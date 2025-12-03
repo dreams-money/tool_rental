@@ -15,13 +15,6 @@ export interface Tool {
   reservations?: Reservation[];
 }
 
-// const resp = await fetch("/tools")
-// if (! resp.ok) {
-//   throw new Error("failed to fetch tools")
-// }
-
-// export const tools: Tool[] = await resp.json()
-
 export const tools: Tool[] = [
   {
     id: 'excavator-mini',
@@ -110,7 +103,7 @@ export const tools: Tool[] = [
     description: 'Use to cut framing, subfloor, large sheets of plywood, and even chopping firewood.',
     dailyRate: 27,
     weeklyRate: 105,
-    image: 'wood',
+    image: 'circular saw',
     specs: ['20v Battery', '6.5" Blade', '2.25" cut depth at 90 degrees']
   },
   {
@@ -120,7 +113,7 @@ export const tools: Tool[] = [
     description: 'Versatile tool for cutting curves, intricate shapes, and small notches in wood.',
     dailyRate: 15,
     weeklyRate: 56,
-    image: 'wood',
+    image: 'jig saw',
     specs: ['Electric']
   },
   {
@@ -130,7 +123,7 @@ export const tools: Tool[] = [
     description: 'Shape wood precisely - groves, precise wood joins, finished edges, trimming.',
     dailyRate: 20,
     weeklyRate: 80,
-    image: 'wood',
+    image: 'wood router',
     specs: ['Electric']
   },
   {
@@ -140,8 +133,8 @@ export const tools: Tool[] = [
     description: 'Cut large wood sections - posts, trees, old framing',
     dailyRate: 27,
     weeklyRate: 104,
-    image: 'wood',
-    specs: ['Electric']
+    image: 'reciprocating saw',
+    specs: ['20v battery', '8" blade length', 'Variable speed', 'LED light']
   },
   {
     id: 'oscillating-tool',
@@ -150,8 +143,8 @@ export const tools: Tool[] = [
     description: 'Cut in hard to reach areas.  Cut precise corners.',
     dailyRate: 10,
     weeklyRate: 40,
-    image: 'wood',
-    specs: ['Electric']
+    image: 'oscillating tool',
+    specs: ['20v battery', 'Variable Speed', '20,000 Oscillations Per Minute', 'LED Light']
   },
   {
     id: 'table-saw',
@@ -160,8 +153,18 @@ export const tools: Tool[] = [
     description: 'Precisely cut plywood or particle board.  Cut wood length wise, make bevels, miter cuts, or dado cuts. Excels at repetive and high precision cuts.',
     dailyRate: 42,
     weeklyRate: 166,
-    image: 'wood',
+    image: 'table saw',
     specs: ['Electric', '48 inch cut width']
+  },
+  {
+    id: 'cabinet-clamps',
+    name: 'Cabinet Clamps',
+    category: 'Wood Cutting & Shaping',
+    description: 'Join pieces of high-quality wood for custom cabinets, boxes, or doors.',
+    dailyRate: 25,
+    weeklyRate: 75,
+    image: 'cabinet clamps',
+    specs: ['Set of 2', '48" clamps', '1500lb clamping force']
   },
   {
     id: 'track-saw',
@@ -171,7 +174,7 @@ export const tools: Tool[] = [
     dailyRate: 45,
     weeklyRate: 180,
     image: 'wood',
-    specs: ['Electric', 'X inch long track']
+    specs: ['6 1/2" blade', 'E-Brake', 'Cuts through hardwoods up to 2-1/8 in thick', '60V Battery']
   },
   {
     id: 'miter-saw-12-in',
@@ -181,7 +184,7 @@ export const tools: Tool[] = [
     dailyRate: 42,
     weeklyRate: 166,
     image: 'wood',
-    specs: ['Electric', '12 inch']
+    specs: ['Corded', '12" blade', '14 positive angle stops', 'Fence support', '5 1/2 vertical base']
   },
   {
     id: 'dremel',
@@ -201,7 +204,7 @@ export const tools: Tool[] = [
     dailyRate: 20,
     weeklyRate: 70,
     image: 'angle grinder',
-    specs: ['Electric']
+    specs: ['Corded', '4 1/2" blade', 'Powerful 7 amp motor']
   },
   {
     id: 'finish-nailer',
@@ -371,7 +374,7 @@ export const tools: Tool[] = [
     dailyRate: 15,
     weeklyRate: 56,
     image: 'carpet kicker',
-    specs: ['Heated Cleaning', 'Large Capacity Tanks', 'Upholstery Attachment', 'Commercial Grade']
+    specs: ['19"- 23" adjustable length', 'Adjustable pin depth']
   },
   {
     id: 'carpet-stretcher',
@@ -381,7 +384,7 @@ export const tools: Tool[] = [
     dailyRate: 28,
     weeklyRate: 112,
     image: 'carpet stretcher',
-    specs: ['X total length', 'Commercial Grade']
+    specs: ['Stretches up to 38 feet in length', '17 locking postions', '18 inch block', '6 quick lock extension tubes']
   },
   {
     id: 'carpet-seamer',
@@ -391,7 +394,7 @@ export const tools: Tool[] = [
     dailyRate: 16,
     weeklyRate: 62,
     image: 'carpet seamer',
-    specs: ['Electric']
+    specs: ['Corded', 'Adjustable thermostat', 'Non-stick grooved base']
   },
   {
     id: 'fiberglass-extension-ladder',
