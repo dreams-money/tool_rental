@@ -447,13 +447,13 @@ export const tools: Tool[] = [
     specs: ['x horse power']
   },
   {
-    id: 'kerosene-heater',
-    name: 'Kerosene Heater',
+    id: 'propane-heater',
+    name: 'Propane Heater',
     category: 'Power & Heating',
     description: 'Warm up your work area or keep your guests snug in that garage party.',
     dailyRate: 34,
     weeklyRate: 134,
-    image: 'kerosense heater',
+    image: 'propane heater',
     specs: ['70,000 BTU']
   },
   // {

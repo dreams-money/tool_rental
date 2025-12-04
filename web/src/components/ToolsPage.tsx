@@ -63,6 +63,15 @@ const toolImages: Record<string, string> = {
   'reciprocating-saw': 'https://static.carson-rentals.com/images/recepricating-saw.jpg',
   'battery-drill': 'https://static.carson-rentals.com/images/drill.jpg',
   'battery-impact-drill': 'https://static.carson-rentals.com/images/impact-drill.jpg',
+  'manual-tamper': 'https://static.carson-rentals.com/images/tool.svg',
+  'drywall-set': 'https://static.carson-rentals.com/images/tool.svg',
+  'generator-200': 'https://static.carson-rentals.com/images/electric.svg', 
+  'lawn-mower': 'https://static.carson-rentals.com/images/machine.svg', 
+  '220v-welder': 'https://static.carson-rentals.com/images/weld.svg', 
+  'cement-board-scorer': 'https://static.carson-rentals.com/images/knife.svg', 
+  'fiberglass-extension-ladder': 'https://static.carson-rentals.com/images/ladder.svg', 
+  'medium-paint-sprayer': 'https://static.carson-rentals.com/images/spray.svg', 
+  'propane-heater': 'https://static.carson-rentals.com/images/heat.svg', 
 };
 
 export function ToolsPage() {
